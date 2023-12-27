@@ -476,6 +476,7 @@ textarea {
 .col-twelve,
 .col-full {
 	width: 100%;
+	padding: 5%;
 }
 
 /**
