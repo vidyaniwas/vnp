@@ -66,7 +66,7 @@
  	window.onload = function () {
             setTimeout(() => {
                 let scrollAmount = 100; // Total pixels to scroll
-                let duration = 1000; // Faster duration in ms for smooth scrolling
+                let duration = 500; // Faster duration in ms for smooth scrolling
                 let intervalTime = 10; // Faster interval for smoother frames (~100 FPS)
                 let steps = duration / intervalTime; // Number of animation steps
                 let stepAmount = scrollAmount / steps; // Pixels per step
@@ -88,7 +88,7 @@
                                     clearInterval(scrollUp);
                                 }
                             }, intervalTime);
-                        }, 300); // Short pause before scrolling back up
+                        }, 200); // Short pause before scrolling back up
                     }
                 }, intervalTime);
             }, 1000); // Delay effect by 1 second
