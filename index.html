@@ -65,10 +65,10 @@
  	        window.onload = function () {
             setTimeout(() => {
                 let startScroll = 0; // Initial position
-                let endScroll = 100; // Target scroll position (100px down)
-                let duration = 2000; // Smooth scrolling duration in ms
+                let endScroll = 250; // Target scroll position (100px down)
+                let duration = 1500; // Smooth scrolling duration in ms
                 let frameRate = 240; // Simulate 240Hz (smooth refresh rate)
-                let stepTime = 1000 / frameRate; // Time per frame
+                let stepTime = 800 / frameRate; // Time per frame
                 let steps = Math.round(duration / stepTime); // Total animation steps
                 let currentStep = 0;
 
