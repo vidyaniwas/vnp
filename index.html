@@ -63,26 +63,35 @@
 
 	
 	<!-- //The page will scroll up and down a little bit after 1 second of loading.// -->
-        window.onload = function () {
-            const scrollAmount = 100; // Number of pixels to scroll
-            const scrollDuration = 1000; // Scroll duration in milliseconds
-
-            // Delay the scroll effect by 1 second
+ 	window.onload = function () {
             setTimeout(() => {
-                // Scroll down by the defined amount
-                window.scrollTo({
-                    top: scrollAmount,
-                    behavior: 'smooth'
-                });
+                let scrollAmount = 100; // Total pixels to scroll
+                let duration = 1000; // Faster duration in ms for smooth scrolling
+                let intervalTime = 10; // Faster interval for smoother frames (~100 FPS)
+                let steps = duration / intervalTime; // Number of animation steps
+                let stepAmount = scrollAmount / steps; // Pixels per step
+                let currentScroll = 0;
 
-                // Scroll back to top after the scrollDuration
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }, scrollDuration);
-            }, 1000); // 1-second delay
+                // Smooth scroll down
+                let scrollDown = setInterval(() => {
+                    currentScroll += stepAmount;
+                    window.scrollTo(0, currentScroll);
+                    if (currentScroll >= scrollAmount) {
+                        clearInterval(scrollDown);
+
+                        // Smooth scroll back up
+                        setTimeout(() => {
+                            let scrollUp = setInterval(() => {
+                                currentScroll -= stepAmount;
+                                window.scrollTo(0, currentScroll);
+                                if (currentScroll <= 0) {
+                                    clearInterval(scrollUp);
+                                }
+                            }, intervalTime);
+                        }, 300); // Short pause before scrolling back up
+                    }
+                }, intervalTime);
+            }, 1000); // Delay effect by 1 second
         };
     </script>
 
