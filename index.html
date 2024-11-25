@@ -62,34 +62,39 @@
 
 	
 	<!-- //The page will scroll up and down a little bit after 1 second of loading.// -->
- 	window.onload = function () {
+ 	        window.onload = function () {
             setTimeout(() => {
-                let scrollAmount = 250; // Total pixels to scroll
-                let duration = 500; // Faster duration in ms for smooth scrolling
-                let intervalTime = 10; // Faster interval for smoother frames (~100 FPS)
-                let steps = duration / intervalTime; // Number of animation steps
-                let stepAmount = scrollAmount / steps; // Pixels per step
-                let currentScroll = 0;
+                let startScroll = 0; // Initial position
+                let endScroll = 100; // Target scroll position (100px down)
+                let duration = 2000; // Smooth scrolling duration in ms
+                let frameRate = 240; // Simulate 240Hz (smooth refresh rate)
+                let stepTime = 1000 / frameRate; // Time per frame
+                let steps = Math.round(duration / stepTime); // Total animation steps
+                let currentStep = 0;
 
-                // Smooth scroll down
-                let scrollDown = setInterval(() => {
-                    currentScroll += stepAmount;
+                function easeInOutQuad(t) {
+                    // Easing function for smoother transitions
+                    return t < 0.5
+                        ? 2 * t * t
+                        : 1 - Math.pow(-2 * t + 2, 2) / 2;
+                }
+
+                function scroll(step, direction) {
+                    const progress = easeInOutQuad(step / steps); // Calculate eased progress
+                    const currentScroll = startScroll + (endScroll - startScroll) * progress * direction;
                     window.scrollTo(0, currentScroll);
-                    if (currentScroll >= scrollAmount) {
-                        clearInterval(scrollDown);
 
-                        // Smooth scroll back up
+                    if (step < steps) {
+                        setTimeout(() => scroll(step + 1, direction), stepTime); // Continue scrolling
+                    } else if (direction === 1) {
+                        // After scrolling down, pause briefly and scroll up
                         setTimeout(() => {
-                            let scrollUp = setInterval(() => {
-                                currentScroll -= stepAmount;
-                                window.scrollTo(0, currentScroll);
-                                if (currentScroll <= 0) {
-                                    clearInterval(scrollUp);
-                                }
-                            }, intervalTime);
-                        }, 200); // Short pause before scrolling back up
+                            scroll(0, -1); // Scroll up
+                        }, 300); // Short pause before reversing
                     }
-                }, intervalTime);
+                }
+
+                scroll(0, 1); // Start scrolling down
             }, 1000); // Delay effect by 1 second
         };
     </script>
