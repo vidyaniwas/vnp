@@ -60,6 +60,30 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-153937526-1');
+
+	
+	<!-- //The page will scroll up and down a little bit after 1 second of loading.// -->
+        window.onload = function () {
+            const scrollAmount = 100; // Number of pixels to scroll
+            const scrollDuration = 500; // Scroll duration in milliseconds
+
+            // Delay the scroll effect by 1 second
+            setTimeout(() => {
+                // Scroll down by the defined amount
+                window.scrollTo({
+                    top: scrollAmount,
+                    behavior: 'smooth'
+                });
+
+                // Scroll back to top after the scrollDuration
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, scrollDuration);
+            }, 500); // 1-second delay
+        };
     </script>
 
    <!-- favicons ================================================== -->
