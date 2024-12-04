@@ -4,15 +4,14 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <!--ADSENSE-->
-<!--     <script data-ad-client="ca-pub-1642640364155791" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+
    <!--- basic page needs
    ================================================== -->
-	<meta name="google-site-verification" content="xY5l3TiEAavrW7EQo0-p7Xewq8F612BY7YaZrCS6Mb8" />
-   <meta charset="utf-8">
+	<meta name="google-site-verification" content="" />
+   	<meta charset="utf-8">
 	<title>Vidya Niwas Pandey</title>
 	<meta name="description" content="Vidya Niwas Pandey is a Developer">  
 	<meta name="author" content="Vidya Niwas Pandey">
-
     <meta name="keywords" content="Vidya Niwas Pandey, Noida, developer, full-stack developer"/>
     <meta name="subject" content="Vidya Niwas Pandey Portfolio">
     <meta name="copyright"content="Vidya Niwas Pandey">
@@ -55,12 +54,50 @@
 	<script src="js/pace.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153937526-1"></script> -->
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-153937526-1');
+
+	
+	<!-- //The page will scroll up and down a little bit after 1 second of loading.// -->
+ 	        window.onload = function () {
+            setTimeout(() => {
+                let startScroll = 0; // Initial position
+                let endScroll = 250; // Target scroll position (100px down)
+                let duration = 500; // Smooth scrolling duration in ms
+                let frameRate = 240; // Simulate 240Hz (smooth refresh rate)
+                let stepTime = 800 / frameRate; // Time per frame
+                let steps = Math.round(duration / stepTime); // Total animation steps
+                let currentStep = 0;
+
+                function easeInOutQuad(t) {
+                    // Easing function for smoother transitions
+                    return t < 0.5
+                        ? 2 * t * t
+                        : 1 - Math.pow(-2 * t + 2, 2) / 2;
+                }
+
+                function scroll(step, direction) {
+                    const progress = easeInOutQuad(step / steps); // Calculate eased progress
+                    const currentScroll = startScroll + (endScroll - startScroll) * progress * direction;
+                    window.scrollTo(0, currentScroll);
+
+                    if (step < steps) {
+                        setTimeout(() => scroll(step + 1, direction), stepTime); // Continue scrolling
+                    } else if (direction === 1) {
+                        // After scrolling down, pause briefly and scroll up
+                        setTimeout(() => {
+                            scroll(0, -1); // Scroll up
+                        }, 300); // Short pause before reversing
+                    }
+                }
+
+                scroll(0, 1); // Start scrolling down
+            }, 800); // Delay effect by 1 second
+        };
     </script>
 
    <!-- favicons ================================================== -->
@@ -176,7 +213,7 @@
 
        <ul class="intro-social">
 		<li><a href="https://www.linkedin.com/in/vnpandey/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-		<li><a href="https://www.instagram.com/vn_pandey_/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+		<li><a href="https://www.instagram.com/_vn_pandey/" target="_blank"><i class="fa fa-instagram"></i></a></li>
 		<li><a href="https://github.com/vidyaniwas" target="_blank"><i class="fa fa-github"></i></a></li>
 		<li><a href="https://www.youtube.com/channel/UCqeEpxEgoulIoerFsDQ2dQg" target="_blank"><i class="fa fa-youtube"></i></a></li>
 		<li><a href="#"><i class="fa fa-code"></i></a></li>
@@ -882,7 +919,7 @@ I am pleased to share that I have completed my postgraduate education and earned
 
                 <ul class="footer-social">
 					<li><a href="https://www.linkedin.com/in/vnpandey/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-					<li><a href="https://www.instagram.com/vn_pandey_/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="https://www.instagram.com/_vn_pandey/" target="_blank"><i class="fa fa-instagram"></i></a></li>
 					<li><a href="https://github.com/vidyaniwas" target="_blank"><i class="fa fa-github"></i></a></li>
 					<li><a href="https://www.youtube.com/channel/UCqeEpxEgoulIoerFsDQ2dQg" target="_blank"><i class="fa fa-youtube"></i></a></li>
 					<li><a href="#"><i class="fa fa-code"></i></a></li>
