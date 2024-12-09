@@ -61,43 +61,12 @@
         gtag('js', new Date());
         gtag('config', 'UA-153937526-1');
 
-	
-	<!-- //The page will scroll up and down a little bit after 1 second of loading.// -->
- 	        window.onload = function () {
-            setTimeout(() => {
-                let startScroll = 0; // Initial position
-                let endScroll = 250; // Target scroll position (100px down)
-                let duration = 500; // Smooth scrolling duration in ms
-                let frameRate = 240; // Simulate 240Hz (smooth refresh rate)
-                let stepTime = 800 / frameRate; // Time per frame
-                let steps = Math.round(duration / stepTime); // Total animation steps
-                let currentStep = 0;
-
-                function easeInOutQuad(t) {
-                    // Easing function for smoother transitions
-                    return t < 0.5
-                        ? 2 * t * t
-                        : 1 - Math.pow(-2 * t + 2, 2) / 2;
-                }
-
-                function scroll(step, direction) {
-                    const progress = easeInOutQuad(step / steps); // Calculate eased progress
-                    const currentScroll = startScroll + (endScroll - startScroll) * progress * direction;
-                    window.scrollTo(0, currentScroll);
-
-                    if (step < steps) {
-                        setTimeout(() => scroll(step + 1, direction), stepTime); // Continue scrolling
-                    } else if (direction === 1) {
-                        // After scrolling down, pause briefly and scroll up
-                        setTimeout(() => {
-                            scroll(0, -1); // Scroll up
-                        }, 300); // Short pause before reversing
-                    }
-                }
-
-                scroll(0, 1); // Start scrolling down
-            }, 800); // Delay effect by 1 second
-        };
+		document.getElementById("contact-button").addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent default link behavior
+        // Open Gmail Compose in a new tab
+        const gmailComposeUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=vidyaniwas2@gmail.com&su=Short%20Message&body=Hello,%20I%20am%20interested%20in%20hiring%20you.";
+        window.open(gmailComposeUrl, "_blank", "noopener,noreferrer");
+    });
     </script>
 
    <!-- favicons ================================================== -->
@@ -138,58 +107,6 @@
    <section id="intro">   
 
    	<div class="intro-overlay"></div>	
-	   <div class="background">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-	 </div>
    	<div class="intro-content">
    		<div class="row">
 
@@ -315,19 +232,27 @@
 						<strong>CSS </strong>
 					</li>
 
-                </ul> <!-- /skill-bars -->		
-
+                </ul> <!-- /skill-bars -->	
    		</div>
 
    	</div>
-
+	   
    	<div class="row button-section">
    		<div class="col-twelve">
+			<a href="#" 
+   id="contact-button" 
+   title="Hire Me" 
+   class="button button-primary stroke smoothscroll">
+   Contact Me
+</a>
+
    			<a href="#contact" title="Hire Me" class="button button-primary stroke smoothscroll">Contact Me</a>
-			<a href="#contact" title="Download Resume" class="button button-primary stroke">Download Resume</a>
-   			<!--<a href="VidyaNiwasPandey_Resume_.pdf" target="_blank" title="Download Resume" class="button button-primary stroke">Download Resume</a> -->
-   			<!-- <a href="Vidya Niwas Pandey – Solidity _ Smart Contract Developer.pdf" title="Download CV (Solidity)" class="button button-primary">Download CV (Solidity)</a> -->
-   		</div>   		
+			<a href="Resume.html" title="Download Resume" class="button button-primary stroke">Download Resume</a>
+   			<!-- <a href="VidyaNiwasPandey_Resume_.pdf" target="_blank" title="Download Resume" class="button button-primary stroke">Download Resume</a> 
+   			<a href="Vidya Niwas Pandey – Solidity _ Smart Contract Developer.pdf" title="Download CV (Solidity)" class="button button-primary">Download CV (Solidity)</a>  -->
+   		</div>
+		   
+					 
    	</div>
 
    </section> <!-- /process-->    
