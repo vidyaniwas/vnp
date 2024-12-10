@@ -1,88 +1,287 @@
+/* General Body Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: white;
     background-color: #000;
+    color: #f1f1f1;
+    line-height: 1.6;
 }
 
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 185, 204, 0.7);
+    overflow: hidden;
+}
+
+.headColer{
+    color: #cc005f;
+    font-size: 2.4em;
+}
+
+/* Header Styling */
 header {
-    background: #000;
-    color: #00b9cc;
     text-align: center;
-    padding: 20px 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     border-bottom: 2px solid #00b9cc;
 }
 
-header h1 {
+/* Header contact container */
+header .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Space between items */
+    margin-top: 15px;
+}
+
+/* Individual contact item */
+header .contact-info p {
     margin: 0;
-    font-size: 2rem;
+    font-size: 0.95em;
+    color: #ddd;
 }
 
-header p {
-    margin: 5px 0;
-    font-size: 1.2rem;
-}
-
-header a {
+header .contact-info a {
     color: #00b9cc;
     text-decoration: none;
-    font-weight: bold;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 0;
+header .contact-info a:hover {
+    text-decoration: underline;
+    color: #9ee4e6;
 }
 
-section {
-    margin-bottom: 20px;
-}
 
-h2 {
+/* Section Titles */
+section h3 {
+    font-size: 1.8em;
     color: #00b9cc;
-    border-bottom: 1px solid #00b9cc;
+    border-bottom: 2px solid #00b9cc;
     padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+/* Education Section */
+.education p {
+    margin: 10px 0;
+    font-size: 1.1em;
 }
 
-ul li {
-    margin-bottom: 10px;
+.education p strong {
+    color: #9ee4e6;
 }
 
-p, ul li {
-    color: white;
+/* Projects Section */
+.projects p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    border-left: 4px solid #00b9cc;
+    padding-left: 15px;
+    background-color: #1b1b1b;
+    border-radius: 5px;
 }
 
-footer {
-    background: #000;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9em;
-    border-top: 1px solid #00b9cc;
-}
-.Portfo {
-    color: #FF0077;;
+.projects p strong {
+    color: #9ee4e6;
+    text-decoration: underline;
 }
 
+/* Experience Section */
+.experience p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #ddd;
+}
+
+.experience p strong {
+    color: #00b9cc;
+}
+
+/* Skills Section */
+.skills p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #ddd;
+    line-height: 1.8;
+    padding: 10px;
+    background-color: #1b1b1b;
+    border-left: 4px solid #00b9cc;
+    border-radius: 5px;
+}
+
+/* Certificates Section */
+.certificates p {
+    margin: 10px 0;
+    font-size: 1em;
+    padding-left: 20px;
+    position: relative;
+}
+
+.certificates p::before {
+    content: "✔";
+    color: #00b9cc;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Achievements Section */
+.achievements p {
+    margin: 10px 0;
+    font-size: 1em;
+    padding-left: 20px;
+    position: relative;
+}
+
+.achievements p::before {
+    content: "🏆";
+    color: #00b9cc;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Languages Section */
+.languages p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #ddd;
+    border-left: 4px solid #00b9cc;
+    padding-left: 15px;
+    background-color: #1b1b1b;
+    border-radius: 5px;
+}
+
+/* Interests Section */
+.interests p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #ddd;
+    background-color: #1b1b1b;
+    padding: 10px;
+    border-left: 4px solid #00b9cc;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
-    body {
-        font-size: 14px;
+    header h1 {
+        font-size: 2em;
     }
 
-    h1 {
-        font-size: 1.5rem;
+    header h2 {
+        font-size: 1.2em;
     }
 
-    h2 {
-        font-size: 1.2rem;
+    .container {
+        padding: 15px;
+    }
+
+    section h3 {
+        font-size: 1.5em;
+    }
+
+    .skills p,
+    .languages p,
+    .interests p {
+        font-size: 0.9em;
     }
 }
+/* Style for Print Button */
+.print-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #00b9cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 12pt;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.print-button:hover {
+    background-color: #007f94;
+}
+
+/* General Print-Specific Styles */
+@media print {
+    /* Hide the print button */
+    .print-button {
+        display: none;
+    }
+
+    /* Optimize layout for print */
+    body {
+        color: black;
+        background-color: white;
+        font-size: 10pt; /* Base font size for content */
+        line-height: 1.4; /* Adjust line height for readability */
+    }
+
+    /* Keep header styles unchanged */
+    header {
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: 24px; /* Keep the original size for header titles */
+    }
+
+    header h2 {
+        font-size: 18px;
+    }
+
+    header p {
+        font-size: 14px; /* Slightly larger text for contact information */
+    }
+
+    /* Adjust font sizes for other sections */
+    h3 {
+        font-size: 12pt;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    p, ul, li {
+        font-size: 10pt;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        background-color: white;
+        box-shadow: none;
+        padding: 0 10px;
+    }
+
+    section {
+        page-break-inside: avoid; /* Avoid breaking sections across pages */
+        margin-top: 10px;
+    }
+
+    /* Avoid unnecessary white space */
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+    }
+}
+
+
+

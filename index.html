@@ -61,12 +61,27 @@
         gtag('js', new Date());
         gtag('config', 'UA-153937526-1');
 
-		document.getElementById("contact-button").addEventListener("click", function (e) {
-        e.preventDefault(); // Prevent default link behavior
-        // Open Gmail Compose in a new tab
-        const gmailComposeUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=vidyaniwas2@gmail.com&su=Short%20Message&body=Hello,%20I%20am%20interested%20in%20hiring%20you.";
-        window.open(gmailComposeUrl, "_blank", "noopener,noreferrer");
-    });
+	// Function to calculate experience
+		function calculateExperience() {
+		    const startDate = new Date("2022-05-02"); // May 2, 2022
+		    const currentDate = new Date();
+		
+		    // Calculate the difference in time (in milliseconds)
+		    const timeDifference = currentDate - startDate;
+		
+		    // Convert time difference to years
+		    const experienceInYears = timeDifference / (1000 * 3600 * 24 * 365);
+		
+		    // Round the result to 1 decimal point
+		    const roundedExperience = experienceInYears.toFixed(1);
+		
+		    // Display the experience in the HTML element
+		    document.getElementById("experience").innerText = roundedExperience;
+		}
+
+		// Call the function to calculate experience on page load
+		window.onload = calculateExperience;
+
     </script>
 
    <!-- favicons ================================================== -->
@@ -116,9 +131,10 @@
 					<h1 style="font-size: 90% !important;">I<span style="color: #00b9cc;">'</span>m VIDYA NIWAS PANDEY<span style="color: #2500cc;"></span></h1>
 
                     <p class="intro-position">
-                        <span>Developer</span>
+					<span>Welcome to My Digital Space!</span>	
+                        <!-- <span>Developer</span>
                         <span>Photographer</span>
-                        <span>Rapper</span>
+                        <span>Rapper</span> -->
                     </p>
 
 	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
@@ -156,9 +172,9 @@
 			<div class="intro-info">
 			<img src="images/portfolio/modals/mypic.JPG" alt="Vidya Niwas Pandey Picture">
    			<h5>ABOUT ME</h5>
-   			<h2>Greetings, allow me to present myself.</h2>
-
-   				<p class="lead">"I work full-time as a <font color="#FF0077">Full-Stack Developer</font> and part-time as a <font color="#FF0077">Digital Marketer</font> and <font color="#FF0077">Photographer</font>."</p>
+   			<h2>Full Stack .NET Developer</h2>
+			   <p class="lead">"I’m a Full Stack .NET Developer with <span id="experience"></span> years of experience in web application development using C#, ASP.NET, MVC, and SQL Server. Outside work, I pursue photography as a creative passion."</p>
+   				<!-- <p class="lead">"I work full-time as a <font color="#FF0077">Full stack .NET developer</font> with 2.6 years of experience in web application development <font color="#FF0077">using C#, ASP.NET, MVC, and SQL Server.</font> Outside work, <font color="#FF0077"> I pursue photography as a creative passion.</font>."</p> -->
    			</div>   			
 
    		</div>   		
@@ -169,7 +185,7 @@
    		<div style="width: 100% !important;" class="col-six tab-full">
 
    			<h2>Profile</h2>
-                <p>Welcome to my digital hub! I'm Vidya Niwas Pandey, an Application Developer proficient in AngularJS, ASP .NET, C#, CSS, HTML, JavaScript. With a Master's in Computer Application and a Bachelor's in Science, my expertise spans two years of computer teaching. Explore my portfolio for a glimpse into my technical finesse, including application development, SSRS reporting, and professional photo/video editing. Let's connect and explore innovative solutions together in the realm of Application Development and Photography!</p>
+                <p>I’m passionate about building robust applications. With a background in computer applications and a dedication to continuous learning, I’m always exploring new ways to innovate and create impactful solutions. Explore my portfolio to see my work and let’s connect to collaborate on exciting projects!</p>
 
    			<ul class="info-list">
    				<li>
@@ -194,39 +210,44 @@
    		</div>
 
    		<div class="col-six tab-full">
-			
-			<h2>Skills</h2>
                 <p>
                     <h2><strong>Languages:</strong></h2>
                     <b>English :</b><br /> Read, Write, Speak : <i>Native</i><br />
                     <b>Hindi :</b><br /> Read, Write, Speak : <i>Mother Tongue</i><br />
                     <b>Sanskrit :</b><br /> Read, Write, Speak : <i>Proficient</i><br />
                 </p>
+				<br>
+				<h2>Skills:</h2>
                 <ul class="skill-bars">
-                    <li>
+					<li>
                         <div class="progress percent75"><span></span></div>
-                        <strong>AngularJS </strong>
+                        <strong> C# </strong>
+                    </li>
+					<li>
+                        <div class="progress percent65"><span></span></div>
+                        <strong>ASP .Net Webform || MVC </strong>
                     </li>
                     <li>
-                        <div class="progress percent70"><span></span></div>
+                        <div class="progress percent80"><span></span></div>
                         <strong>SQL </strong>
                     </li>
                     <li>
-                        <div class="progress percent65"><span></span></div>
-                        <strong>ASP .Net | C# | MVC </strong>
-                    </li>
-                    <!-- <li>
-                        <div class="progress percent75"><span></span></div>
-                        <strong>JavaScript </strong>
-                    </li> -->
-		    		<li>
-                        <div class="progress percent85"><span></span></div>
-                        <strong>HTML </strong>
+                        <div class="progress percent70"><span></span></div>
+                        <strong> .Net Core </strong>
+                    </li> 
+					
+                    <li>
+                        <div class="progress percent70"><span></span></div>
+                        <strong>AngularJS </strong>
                     </li>
 					<li>
 					    <div class="progress percent75"><span></span></div>
 						<strong>JavaScript </strong>
 					</li>
+		    		<li>
+                        <div class="progress percent85"><span></span></div>
+                        <strong>HTML </strong>
+                    </li>
 					<li>
 					    <div class="progress percent85"><span></span></div>
 						<strong>CSS </strong>
@@ -240,7 +261,7 @@
    	<div class="row button-section">
    		<div class="col-twelve">
 			<a href="#contact" title="Hire Me" class="button button-primary stroke smoothscroll">Contact Me</a>
-			<a href="Resume.html" title="Download Resume" class="button button-primary stroke">Download Resume</a>
+			<a href="Resume.html" target="_blank" title="Download Resume" class="button button-primary stroke">Resume</a>
    			<!-- <a href="VidyaNiwasPandey_Resume_.pdf" target="_blank" title="Download Resume" class="button button-primary stroke">Download Resume</a> 
    			<a href="Vidya Niwas Pandey – Solidity _ Smart Contract Developer.pdf" title="Download CV (Solidity)" class="button button-primary">Download CV (Solidity)</a>  -->
    		</div>
@@ -288,7 +309,7 @@
 					</div>
 
 					<div class="timeline-content">
-						<h4><a href="https://galgotiacollege.edu/welcome-to-gcet">Galgotias College of Engineering & Technology in Greater Noida</a></h4>
+						<h4><a href="https://galgotiacollege.edu/" target="_blank">Galgotias College of Engineering & Technology in Greater Noida</a></h4>
 						<p>
 						 
 I am pleased to share that I have completed my postgraduate education and earned a Master of Computer Application (MCA) degree from Galgotias College of Engineering & Technology in Greater Noida.</p>
@@ -308,7 +329,7 @@ I am pleased to share that I have completed my postgraduate education and earned
 	   				</div>
 
 	   				<div class="timeline-content">
-	   					<h4><a href="https://www.rmlau.ac.in/new/index.aspx">Dr. Ram Manohar Lohia Avadh University Ayodhya</a></h4>
+	   					<h4><a href="https://www.rmlau.ac.in/new/index.aspx" target="_blank">Dr. Ram Manohar Lohia Avadh University Ayodhya</a></h4>
 	   					<p>
 							I am delighted to announce that I have successfully completed my Bachelor's degree in Science from Dr. Ram Manohar Lohia Avadh University, Ayodhya</p>
 	   				</div>
@@ -521,7 +542,7 @@ I am pleased to share that I have completed my postgraduate education and earned
                 <div id="modal-07" class="popup-modal slider mfp-hide">	
 
 				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-showworld_app.png" alt="Show Coding Practice PDF" />
+				     		<img src="#" alt="Show Coding Practice PDF" />
 				     	</div>      	
 
 					   <div class="description-box">
@@ -805,7 +826,7 @@ I am pleased to share that I have completed my postgraduate education and earned
    		<div class="col-four tab-full collapse">
 
    			<div class="icon">
-				<a href="vidyaniwas2@gmail.com"><i class="icon-mail"></i></a>
+				<a href="#contact"><i class="icon-mail"></i></a>
    			</div>
 
    			<h5>Email Me At</h5>
