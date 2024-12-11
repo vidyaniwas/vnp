@@ -743,28 +743,30 @@ I am pleased to share that I have completed my postgraduate education and earned
    		<div class="col-twelve">
             
 <!-- form -->
-<form name="form" id="contactForm" method="POST" action="https://formspree.io/f/mjvnbndv">
-      			<fieldset>
-			<div class="form-field">
-				<input name="email" type="email" id="contactEmail" placeholder="Email" value="" required="">
-	                </div>
-                    	<div class="form-field">
-	                 	<textarea name="message" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-	                </div>                      
-                    <div class="form-field">
-                        <button class="submitform" type="submit" name="submit">Submit</button>
-                        <div id="submit-loader">
-			    <div class="text-loader">Sending...</div>                             
-       				  <div class="s-loader">
-					<div class="bounce1"></div>
-					<div class="bounce2"></div>
-					<div class="bounce3"></div>
-				    </div>
-			</div>
-                    </div>
-
-	</fieldset>
+<form name="form" id="contactForm" method="POST" action="https://formspree.io/f/mjvnbndv" onsubmit="return validateForm()">
+    <fieldset>
+        <div class="form-field">
+            <input name="email" type="email" id="contactEmail" placeholder="Email" value="" required>
+            <span id="emailError" class="error-message"></span>
+        </div>
+        <div class="form-field">
+            <textarea name="message" id="contactMessage" placeholder="Message" rows="10" cols="50" required></textarea>
+            <span id="messageError" class="error-message"></span>
+        </div>                      
+        <div class="form-field">
+            <button class="submitform" type="submit" name="submit">Submit</button>
+            <div id="submit-loader">
+                <div class="text-loader">Sending...</div>                             
+                <div class="s-loader">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
 </form>
+
 
             <!-- contact-warning -->
 <div id="message-warning">            	
