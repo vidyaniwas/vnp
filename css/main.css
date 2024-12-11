@@ -1015,6 +1015,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- 
  */
+ .error-message {
+	color: red;
+	font-size: 0.9em;
+	margin-top: 5px;
+	display: block;
+}
 .grey-section {
 	/* background: #ebebeb; */
 	background: #000b0e;
