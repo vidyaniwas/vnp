@@ -8,29 +8,28 @@ window.dataLayer = window.dataLayer || [];
 		    const startDate = new Date("2022-05-02"); // May 2, 2022
 		    const currentDate = new Date();
 		
-		    // Calculate the difference in time (in milliseconds)
+		    // Calculate the difference in time (in milliseconds).
 		    const timeDifference = currentDate - startDate;
 		
-		    // Convert time difference to years
+		    // Convert time difference to years.
 		    const experienceInYears = timeDifference / (1000 * 3600 * 24 * 365);
 		
-		    // Round the result to 1 decimal point
+		    // Round the result to 1 decimal point.
 		    const roundedExperience = experienceInYears.toFixed(1);
 		
-		    // Display the experience in the HTML element
+		    // Display the experience in the HTML element.
 		    document.getElementById("experience").innerText = roundedExperience;
 		}
-
 		// Call the function to calculate experience on page load
 		window.onload = calculateExperience;
 
-        
+
 function validateForm() {
     let email = document.getElementById("contactEmail").value.trim();
     let message = document.getElementById("contactMessage").value.trim();
     let emailError = document.getElementById("emailError");
     let messageError = document.getElementById("messageError");
-
+ 
     let isValid = true;
 
     // Reset error messages
@@ -45,7 +44,6 @@ function validateForm() {
         emailError.textContent = "Please enter a valid email address.";
         isValid = false;
     }
-
     // Message validation
     if (!message) {
         messageError.textContent = "Message is required.";
@@ -54,6 +52,5 @@ function validateForm() {
         messageError.textContent = "Message must be at least 10 characters long.";
         isValid = false;
     }
-
     return isValid;
 }
