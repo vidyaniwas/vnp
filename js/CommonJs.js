@@ -5,16 +5,16 @@ window.dataLayer = window.dataLayer || [];
 
 	// Function to calculate experience
 		function calculateExperience() {
-		    const startDate = new Date("2022-05-02"); // May 2, 2022
+		    const startDate = new Date("2022-05-02"); // May 2, 2022.
 		    const currentDate = new Date();
 		
-		    // Calculate the difference in time (in milliseconds).
+		    // Calculate the difference in time (in milliseconds)
 		    const timeDifference = currentDate - startDate;
 		
-		    // Convert time difference to years.
+		    // Convert time difference to years
 		    const experienceInYears = timeDifference / (1000 * 3600 * 24 * 365);
 		
-		    // Round the result to 1 decimal point.
+		    // Round the result to 1 decimal point
 		    const roundedExperience = experienceInYears.toFixed(1);
 		
 		    // Display the experience in the HTML element.
