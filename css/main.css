@@ -2158,10 +2158,13 @@ header {
 	background: #FFFFFF;
 	padding-top: 12rem;
 	padding-bottom: 12rem;
+	padding-left: 12rem;
+	padding-right: 12rem;
+	border-radius: 10px;
 }
 
 #portfolio .folio-item {
-	padding: 0;
+	border-radius: 10px;
 	position: relative;
 	overflow: hidden;
 }
