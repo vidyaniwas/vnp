@@ -777,6 +777,7 @@ textarea {
 		clear: both !important;
 		margin-left: 0;
 		margin-right: 0;
+		padding: 10px;
 	}
 
 }
